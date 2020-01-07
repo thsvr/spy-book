@@ -17,6 +17,8 @@ gem 'devise'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+# Use omniauth-facebook to do a login with facebook account
+gem 'omniauth-facebook'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
