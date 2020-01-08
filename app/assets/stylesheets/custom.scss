@@ -19,11 +19,12 @@ $gray-darker: #222;
 /* navbar */
 
 .bg-purple {
-  background-color: rgba(88, 56, 88, 0.377);
+  // background-color: rgba(88, 56, 88, 0.377);
+  background-color:rgb(23, 161, 155);
 }
 
 .bg-img1 {
-  background-image: url(https://cdn.evbstatic.com/s3-build/perm_001/068221/django/images/homefeed/music-campaing-2-2600-large.jpg);
+  // background-image: url(https://cdn.evbstatic.com/s3-build/perm_001/068221/django/images/homefeed/music-campaing-2-2600-large.jpg);
 }
 
 .bg-blur {
@@ -95,8 +96,9 @@ p {
   font-size: 1.7em;
   color: #fff;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
+  width: 60px;
+  height: auto;
   &:hover {
     color: #fff;
     text-decoration: none;

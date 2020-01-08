@@ -1,13 +1,15 @@
 <div class="bg-img1 bg-blur"></div>
 <header class="fixed-top navbar-dark bg-purple">
+<%= favicon_link_tag asset_path('logo1.png') %>
+
   <div class="">
     <nav class="navbar navbar-expand-sm">
-      <div class ="navbar-header">
-        <%= link_to "Spy-Book", root_path, id: "logo", class: "navbar-brand" %>
+      <div class ="navbar-header"> 
+      <%=image_tag("logo1.png", class: "navbar-brand", id: "logo")%>
       </div>
       <ul class="navbar-nav ml-auto">
-         <li class="nav-item"><%= link_to "My Profile", user_path(current_user), class: "nav-link" %></li>
         <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to "My Profile", user_path(current_user), class: "nav-link" %></li>
           <li class="nav-item dropdown">
             <a id= "navbarDropdown" class="nav-link dropdown-toggle" 
                 href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
