@@ -5,10 +5,22 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
+# Bootstrap
+gem 'bootstrap', '~> 4.4.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+# Rubocop
+gem 'rubocop'
+# Devise security gem
+gem 'devise'
+# Allows .evn file use
+gem 'dotenv-rails'
+# Faker for database population
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+# Use omniauth-facebook to do a login with facebook account
+gem 'omniauth-facebook'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -28,9 +40,13 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # RSpec Testing
+  gem "database_cleaner"
+  gem "rspec-rails"
 end
 
 group :development do
@@ -44,7 +60,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
