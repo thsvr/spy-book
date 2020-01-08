@@ -9,15 +9,16 @@
 
 - Ruby
 - Ruby on Rails, Bootstrap
-- Gems: Devise, RSpec, Capybara, database_cleaner, selenium-webdriver. 
+- Gems: Devise, RSpec, Capybara, database_cleaner, selenium-webdriver.
 
 ### Requirements
 
 * Ruby 2.6.3
+* Postgresql - [Instructions for installation](https://www.howtoforge.com/tutorial/ruby-on-rails-ror-with-postgresql-on-ubuntu-16-04/)
 
 ### Installation
 
-* Download repository to your local machine, then run `bundle install` and run `rails db:create`, `rails db:migrate`.
+* Download repository to your local machine, then run `bundle install` and run `rails db:setup`, `rails db:migrate`.
 
 ## Authors
 
