@@ -13,6 +13,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'rubocop'
 # Devise security gem
 gem 'devise'
+# Allows .evn file use
+gem 'dotenv-rails'
 # Faker for database population
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use Puma as the app server
