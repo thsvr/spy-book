@@ -1,0 +1,11 @@
+<h1>
+<%if current_user %>
+  <%= current_user.fname%> <%= current_user.lname%>
+<% end %>
+</h1>
+
+<h2>My Posts</h2>
+<% @user.posts.each do |p|%>
+  <%= p.content %>
+  <br><br>
+<% end %>
