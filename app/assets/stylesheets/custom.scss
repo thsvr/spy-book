@@ -37,6 +37,10 @@ $gray-darker: #222;
   -webkit-filter: blur(15px);
   filter: blur(15px);
 }
+/*form*/
+.form-control{
+  width: 50%;
+}
 
 /* universal */
 html, body{ overflow-x: hidden;}

@@ -1,0 +1,8 @@
+<%name = "#{object.user.fname} #{object.user.lname}" %>
+<div>
+  <p>
+  <h6 class="bold inline"><%= name %></h6> Posted <%= distance_of_time_in_words(object.post.created_at, object.created_at) %> ago
+  </p>
+
+  <p class="comment"><%= object.content %></p>
+</div>

@@ -1,0 +1,11 @@
+<h4>Post a Comment</h4>
+<%= form_with(model: Comment.new, local: true) do |f| %>
+  <%= f.hidden_field :post_id, value: object.id %>
+  <p>
+    <%= f.label :comment %><br/>
+    <%= f.text_area :content, class: 'form-control' %>
+  </p>
+  <p>
+    <%= f.submit 'Submit', class: 'form-control btn btn-primary' %>
+  </p>
+<% end %>

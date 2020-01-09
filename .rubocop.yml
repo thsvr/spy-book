@@ -7,7 +7,7 @@ AllCops:
     - "Rakefile"
   DisplayCopNames: true
 
-Layout/LineLength:
+Metrics/LineLength:
   Max: 120
 Metrics/MethodLength:
   Include: ["app/controllers/*"]

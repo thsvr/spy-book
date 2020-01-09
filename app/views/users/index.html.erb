@@ -2,8 +2,33 @@
 
 <h2>All Posts</h2>
 <% @posts.each do |p|%>
-  <%= p.user.fname %> <%= p.user.lname %>
+  <h3><%= p.user.fname %> <%= p.user.lname %></h3>
   <br>
   <%= p.content %>
+  <br>
+  <%= p.likes.count %>
+  <%= link_to post_likes_path(p), class: "text-light", method: :post do %>
+    <% if liked?(p, 'post') %>
+        <button class="btn btn-warning">Unlike?</button>
+      <% else %>
+        <button class="btn btn-primary">Like?</button>
+    <% end %>
+  <% end %>
+  <br>
+  <%= render 'comments/form', object: p %>
+  <br>
+  <h4>Comments (<%= p.comments.size %>)</h4>
+  <% p.comments.each do |c|%>
+    <%= render 'comments/comment', object: c %>
+    
+    <%= c.likes.count %>
+    <%= link_to comment_likes_path(c), class: "text-light", method: :post do %>
+      <% if liked?(c, 'comment') %>
+        <button class="btn btn-warning">Unlike?</button>
+      <% else %>
+        <button class="btn btn-primary">Like?</button>
+      <% end %>
+    <% end %>
+  <% end %>
   <br><br>
 <% end %>

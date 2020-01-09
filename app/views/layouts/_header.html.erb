@@ -5,7 +5,9 @@
   <div class="">
     <nav class="navbar navbar-expand-sm">
       <div class ="navbar-header"> 
-      <%=image_tag("logo1.png", class: "navbar-brand", id: "logo")%>
+      <%= link_to root_path, class: "text-light" do %>
+        <%=image_tag("logo1.png", class: "navbar-brand", id: "logo")%>
+      <% end %>
       </div>
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
