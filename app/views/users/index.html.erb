@@ -1,9 +1,13 @@
 <h1> This is the index page </h1>
 
-<h2>All Posts</h2>
-<% @posts.each do |p|%>
-  <%= p.user.fname %> <%= p.user.lname %>
+<h2>All Users</h2>
+<% @users.each do |user|%>
+  <%= user.fname %> <%= user.lname %>
   <br>
-  <%= p.content %>
+  <% if current_user.id != user.id%>
+    <%= link_to '#' do %>
+      <button class= "btn btn-warning"> Send Friend Request? </button>
+    <% end %>
+  <% end %>
   <br><br>
 <% end %>
