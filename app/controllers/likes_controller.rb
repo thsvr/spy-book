@@ -11,11 +11,10 @@ class LikesController < ApplicationController
       @like = @subject.likes.build(user_id: current_user.id)
       if @like.save
         flash[:success] = "#{type} liked!"
-        redirect_back(fallback_location: root_path)
       else
         flash[:danger] = "#{type} like failed!"
-        redirect_back(fallback_location: root_path)
       end
+      redirect_back(fallback_location: root_path)
     end
   end
 
