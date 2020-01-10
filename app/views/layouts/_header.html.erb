@@ -5,10 +5,13 @@
   <div class="">
     <nav class="navbar navbar-expand-sm">
       <div class ="navbar-header"> 
-      <%=image_tag("logo1.png", class: "navbar-brand", id: "logo")%>
+      <%= link_to posts_path, class: "text-light" do %>
+        <%=image_tag("logo1.png", class: "navbar-brand", id: "logo")%>
+      <% end %>
       </div>
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to "Find Friends", users_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to "My Profile", user_path(current_user), class: "nav-link" %></li>
           <li class="nav-item dropdown">
             <a id= "navbarDropdown" class="nav-link dropdown-toggle" 

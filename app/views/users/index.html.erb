@@ -5,7 +5,7 @@
   <%= link_to user_path(user) do %>
     <%= user.fname %> <%= user.lname %>
   <% end %>
-  <br>
+   | 
   <% if current_user.id != user.id%>
     <%= link_to '#' do %>
       <button class= "btn btn-warning"> Send Friend Request? </button>
