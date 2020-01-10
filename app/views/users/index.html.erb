@@ -2,7 +2,9 @@
 
 <h2>All Users</h2>
 <% @users.each do |user|%>
-  <%= user.fname %> <%= user.lname %>
+  <%= link_to user_path(user) do %>
+    <%= user.fname %> <%= user.lname %>
+  <% end %>
   <br>
   <% if current_user.id != user.id%>
     <%= link_to '#' do %>
