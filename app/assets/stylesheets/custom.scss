@@ -1,0 +1,185 @@
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+$state-danger-text: #f0140c;
+$gray: #555;
+$gray-light: #777;
+$gray-lighter: #999;
+$gray-darker: #222;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* navbar */
+
+.bg-purple {
+  // background-color: rgba(88, 56, 88, 0.377);
+  background-color:rgb(23, 161, 155);
+}
+
+.bg-img1 {
+  // background-image: url(https://cdn.evbstatic.com/s3-build/perm_001/068221/django/images/homefeed/music-campaing-2-2600-large.jpg);
+}
+
+.bg-blur {
+  z-index: -1;
+  width: 110%;
+  height: 600px;
+  position: absolute;
+  top:0;
+  left: -20px;
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+}
+
+/* universal */
+html, body{ overflow-x: hidden;}
+
+body {
+  padding-top: 100px;
+  color: grey;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: bold;
+  width: 60px;
+  height: auto;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error !optional;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+/* flash */
+.flash {
+  z-index: 99;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+/* Events index */
+
+.box {
+  height: 172px;
+}
+
+.card {
+  overflow-x: hidden;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.old-overlay {
+  pointer-events: none;
+  background-color: rgba(128, 128, 128, 0.747);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 98;
+}

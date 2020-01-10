@@ -1,0 +1,9 @@
+<h1> This is the index page </h1>
+
+<h2>All Posts</h2>
+<% @posts.each do |p|%>
+  <%= p.user.fname %> <%= p.user.lname %>
+  <br>
+  <%= p.content %>
+  <br><br>
+<% end %>
