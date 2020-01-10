@@ -2,3 +2,17 @@
 <p>Find me in app/views/posts/show.html.erb</p>
 
 <%= @post.user.fname %> <%= @post.user.lname %> | <%= @post.content %>
+<%= render 'comments/form', object: @post%>
+
+<%@post.comments.each do |c|%>
+    <%= c.user.fname %>
+    <%= c.user.lname%> 
+    <br>
+    <%= c.content %> 
+    <% if current_user.id == c.user_id%>
+      <%= link_to  "Delete comment", comment_path(c), method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
+    <br><br>
+<%end%>
+
+
