@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
@@ -16,13 +18,14 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     return unless current_user.id == @comment.user_id
+
     @comment.destroy
     flash[:success] = 'Comment deleted'
     redirect_back(fallback_location: root_path)
   end
 
   private
-    
+
   def comment_params
     params.require(:comment).permit(:content, :post_id)
   end
