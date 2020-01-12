@@ -7,5 +7,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @friendrequests = User.find(params[:id]).friendrequests
   end
 end
