@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show] do
     resources :friendships, only: %i[create] do
       collection do
-        get 'acceptFriend'
-        get 'declineFriend'
+        get 'accept_friend'
+        get 'decline_friend'
       end
     end
   end

@@ -14,7 +14,7 @@ module ApplicationHelper
   # Checks whether or not a user has had a friend request sent to them by the current user
   # returning either true or false
   def friendRequestSent?(user)
-    requestSent = current_user.friendsent.exists?(sent_to_id: user.id, status: false)
+    current_user.friendsent.exists?(sent_to_id: user.id, status: false)
   end
 
   # Checks whether or not a user has sent a friend request to the current user

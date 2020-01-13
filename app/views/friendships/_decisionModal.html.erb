@@ -12,10 +12,10 @@
         <h5 class="modal-title" id="decisionModalLabel">Friend Request from <%= "#{object.fname} #{object.lname}" %></h5>
       </div>
       <div class="modal-footer">
-        <%= link_to acceptFriend_user_friendships_path(object) do %>
+        <%= link_to accept_friend_user_friendships_path(object) do %>
           <button type="button" class="btn btn-primary">Accept</button>
         <% end %>
-        <%= link_to declineFriend_user_friendships_path(object) do %>
+        <%= link_to decline_friend_user_friendships_path(object) do %>
           <button type="button" class="btn btn-warning">Decline</button>
         <% end %>
       </div>

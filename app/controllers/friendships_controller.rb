@@ -10,20 +10,20 @@ class FriendshipsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-  def acceptFriend
+  def accept_friend
     @friendrequest = Friendship.find_by(sent_by_id: params[:user_id], sent_to_id: current_user.id)
     if @friendrequest
       @friendrequest.status = true
       if @friendrequest.save
         flash[:success] = "Friend Request Accepted!"
-        redirect_back(fallback_location: root_path)
       else
         flash[:danger] = "Friend Request could not be accepted!"
       end
+      redirect_back(fallback_location: root_path)
     end
   end
 
-  def declineFriend
+  def decline_friend
     @friendrequest = Friendship.find_by(sent_by_id: params[:user_id], sent_to_id: current_user.id)
 
     @friendrequest.destroy
