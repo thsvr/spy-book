@@ -7,8 +7,12 @@
   <% end %>
    | 
   <% if current_user.id != user.id%>
-    <%= link_to '#' do %>
-      <button class= "btn btn-warning"> Send Friend Request? </button>
+    <% unless friend_request_sent?(user) %> <!-- If user is not a friend and no request has been sent -->
+      <%= link_to user_friendships_path(user), method: :post do %>
+        <button class= "btn btn-warning"> Send Friend Request? </button>
+      <% end %>
+    <% else %> <!-- If user not a friend and a request has been recieved -->
+      <button class= "btn btn-secondary" disabled> Friend Request pending... </button>
     <% end %>
   <% end %>
   <br><br>
