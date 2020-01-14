@@ -21,6 +21,8 @@ gem 'dotenv-rails'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+#Use Hirb to organize data in console
+gem 'hirb'
 # Use omniauth-facebook to do a login with facebook account
 gem 'omniauth-facebook'
 # Use SCSS for stylesheets
