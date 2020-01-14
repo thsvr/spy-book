@@ -1,4 +1,11 @@
+<%= object.user.fname %>
+<%= object.user.lname %>
+<br>
 <%= object.content %>
+<br>
+<% if object.imageURL%>
+  <%= image_tag(object.imageURL)%>
+<% end %> 
 <%= render 'likes/like_posts', object: object%>
 <%= render 'comments/form', object: object %>
 <%object.comments.each do |c|%>

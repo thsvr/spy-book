@@ -3,6 +3,7 @@
 
 <%= form_for(@post) do |f| %>
     Content: <%= f.text_area :content %><br />
+    Image_by_URL: <%= f.text_field :imageURL %><br />
     <%= f.submit 'New Post'%>
 <% end %>
 
