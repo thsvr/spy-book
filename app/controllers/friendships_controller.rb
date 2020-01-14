@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FriendshipsController < ApplicationController
   def create
     return if current_user.id == params[:user_id] # Disallow the ability to send yourself a friend request
