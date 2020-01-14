@@ -4,9 +4,12 @@ class FriendshipsController < ApplicationController
   def create
     return if current_user.id == params[:user_id] # Disallow the ability to send yourself a friend request
 
+    @user = User.find(params[:user_id])
     @friendship = current_user.friend_sent.build(sent_to_id: params[:user_id])
     if @friendship.save
       flash[:success] = 'Friend Request Sent!'
+      @notification = @user.notifications.build(notice_id: @current_user.id, notice_type: 'friendRequest')
+      @notification.save
     else
       flash[:danger] = 'Friend Request Failed!'
     end

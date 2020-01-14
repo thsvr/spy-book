@@ -1,0 +1,49 @@
+<!-- Modal -->
+<div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="noticeModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="noticeModalLabel">Notifications</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% object.each do |n|%>
+          <!-- If Notification type is a Friend Request -->
+          <% if n.notice_type == "friendRequest"%>
+            <% user = User.find(n.notice_id)%>
+            <%= "Friend Request sent from #{user.fname} #{user.lname}" %>
+          <% end %>
+          <!-- If Notification type is a comment -->
+          <% if n.notice_type == "comment"%>
+            <% post = Post.find(n.notice_id)%>
+            <%= link_to post_path(post) do %>
+               Someone commented on your post
+            <% end %>
+          <% end %>
+          <!-- If Notification type is a liked post -->
+          <% if n.notice_type == "like-post"%>
+            <% post = Post.find(n.notice_id)%>
+            <%= link_to post_path(post) do %>
+               Someone liked your post
+            <% end %>
+          <% end %>
+          <!-- If Notification type is a liked comment -->
+          <% if n.notice_type == "like-comment"%>
+            <%
+              comment = Comment.find(n.notice_id)
+              post = Post.find(comment.post_id) 
+            %>
+            <%= link_to post_path(post) do %>
+               Someone liked your comment under this post
+            <% end %>
+          <% end %>          
+          <br>
+        <% end %>
+      </div>
+      <!-- <div class="modal-footer">
+      </div> -->
+    </div>
+  </div>
+</div>

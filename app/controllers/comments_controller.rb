@@ -9,6 +9,8 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.build(comment_params)
     @post = Post.find(params[:comment][:post_id])
     if @comment.save
+      @notification = @post.user.notifications.build(notice_id: @post.id, notice_type: 'comment')
+      @notification.save
       redirect_to @post
     else
       render 'new'

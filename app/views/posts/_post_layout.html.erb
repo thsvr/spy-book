@@ -16,6 +16,8 @@
   <% if current_user.id == c.user_id%>
     <%= link_to  "Delete comment", comment_path(c), method: :delete, data: { confirm: "You sure?" } %>
   <% end %>
+  <br>
+  <%= render 'likes/like_comments', object: c%>
   <br><br>
 <%end%>
 <br><br>
