@@ -19,6 +19,9 @@ gem 'devise'
 gem 'dotenv-rails'
 # Faker for database population
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+# To add images
+gem 'carrierwave', '1.2.2'       
+gem 'mini_magick', '4.7.0' 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 #Use Hirb to organize data in console
@@ -67,6 +70,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+end
+
+group :production do
+  gem 'fog-aws'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
