@@ -10,10 +10,6 @@ RSpec.describe User, type: :model do
       it 'should include the :fname attribute' do
         expect(user_1.attributes).to include('fname')
       end
-
-      it 'should include the :lname attribute' do
-        expect(user_2.attributes).to include('lname')
-      end
     end
   end
 
