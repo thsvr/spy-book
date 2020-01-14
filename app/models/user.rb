@@ -13,4 +13,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :fname, length: { in: 3..15 }, presence: true
   validates :lname, length: { in: 3..15 }, presence: true
+  validate :picture_size
+
+  private
+
+  # Validates the size of an uploaded picture.
+  def picture_size
+    errors.add(:image, 'should be less than 1MB') if image.size > 1.megabytes
+  end
 end

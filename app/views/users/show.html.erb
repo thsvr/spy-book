@@ -1,7 +1,16 @@
 <h1>
   <%= @user.fname%> <%= @user.lname%>
+  <br>
   <%= image_tag @user.image.url if @user.image? %>
 </h1>
+
+<div>
+  <button class= "btn btn-info" data-toggle="modal" data-target="#imageUploadModal">
+    Upload Profile Picture
+  </button>
+  <%= render 'shared/imageUploadModal', object: @user%>
+</div>
+
 
 <h2>Posts</h2>
 <% @user.posts.each do |p|%>
@@ -19,3 +28,13 @@
 <%end%>
   <br><br>
 <% end %>
+
+
+<script type="text/javascript">
+  document.getElementById('user_image').addEventListener('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 1) {
+      alert('Maximum file size is 1 MB. Please choose a smaller file.');
+    }
+  });
+</script>

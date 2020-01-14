@@ -9,6 +9,8 @@ ruby '2.6.3'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 # Bootstrap
 gem 'bootstrap', '~> 4.4.1'
+# Jquery Rails
+gem 'jquery-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Rubocop
