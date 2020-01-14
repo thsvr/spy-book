@@ -1,0 +1,14 @@
+<%= object.content %>
+<%= render 'likes/like_posts', object: object%>
+<%= render 'comments/form', object: object %>
+<%object.comments.each do |c|%>
+  <%= c.user.fname %>
+  <%= c.user.lname%> 
+  <br>
+  <%= c.content %> 
+  <% if current_user.id == c.user_id%>
+    <%= link_to  "Delete comment", comment_path(c), method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
+  <br><br>
+<%end%>
+<br><br>

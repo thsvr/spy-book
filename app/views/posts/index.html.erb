@@ -2,15 +2,7 @@
 
 <% @friends.each do |u|%>
   <% u.posts.each do |p|%>
-    <%= p.user.fname %> <%= p.user.lname %>
-    <br>
-    <%= p.content %>
-    <br>
-    <%= render 'likes/like_posts', object: p%>
-    <%= render 'comments/form', object: p%>
-
-    <%= render 'comments/comment', object: p%>
-    <br><br>
+    <%= render 'posts/post_layout', object: p %>
   <% end %>
 <% end %>
 

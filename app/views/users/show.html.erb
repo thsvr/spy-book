@@ -14,19 +14,7 @@
 
 <h2>Posts</h2>
 <% @user.posts.each do |p|%>
-  <%= p.content %>
-  <%= render 'comments/form', object: p %>
-  <%p.comments.each do |c|%>
-    <%= c.user.fname %>
-    <%= c.user.lname%> 
-    <br>
-    <%= c.content %> 
-    <% if current_user.id == c.user_id%>
-      <%= link_to  "Delete comment", comment_path(c), method: :delete, data: { confirm: "You sure?" } %>
-    <% end %>
-    <br><br>
-<%end%>
-  <br><br>
+  <%= render 'posts/post_layout', object: p %>
 <% end %>
 
 
