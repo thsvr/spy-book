@@ -2,3 +2,9 @@
 <p>Find me in app/views/posts/show.html.erb</p>
 
 <%= @post.user.fname %> <%= @post.user.lname %> | <%= @post.content %>
+<%= render 'likes/like_posts', object: @post%>
+<%= render 'comments/form', object: @post%>
+
+<%= render 'comments/comment', object: @post%>
+
+

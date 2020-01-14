@@ -1,0 +1,11 @@
+<%object.comments.each do |c|%>
+    <h5> <%= c.user.fname %> <%= c.user.lname%> </h5> Posted <%= distance_of_time_in_words(object.created_at, c.created_at) %> ago
+    <br>
+    <%= c.content %> 
+    <%= render 'likes/like_comments', object: c%>
+
+    <% if current_user.id == c.user_id%>
+      <%= link_to  "Delete comment", comment_path(c), method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
+    <br><br>
+<%end%>

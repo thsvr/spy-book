@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  def index
+    @posts = Post.all
+    # @friends = current_user.friends
+  end
+
   def show
     @post = Post.find(params[:id])
   end
