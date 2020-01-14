@@ -8,8 +8,19 @@
    | 
   <% if current_user.id != user.id%>
     <% unless friend_request_sent?(user) %> <!-- If user is not a friend and no request has been sent -->
-      <%= link_to user_friendships_path(user), method: :post do %>
-        <button class= "btn btn-warning"> Send Friend Request? </button>
+      <% unless friend_request_recieved?(user) %> <!-- If user is not a friend and no request has been recieved -->
+        <% unless friend_request_status?(user) %> <!-- If user is not a friend and but request has been recieved or sent -->
+          <%= link_to user_friendships_path(user), method: :post do %>
+            <button class= "btn btn-warning"> Send Friend Request? </button>
+          <% end %>
+        <% else %> <!-- If user is a friend -->
+          <button class= "btn btn-success"> Friend </button>
+        <% end %>
+      <% else %> <!-- If user not a friend and a request has been sent -->
+        <button class= "btn btn-info" data-toggle="modal" data-target="#decisionModal">
+          Pending Friend Request... 
+        </button>
+        <%= render 'friendships/decisionModal', object: user%>
       <% end %>
     <% else %> <!-- If user not a friend and a request has been recieved -->
       <button class= "btn btn-secondary" disabled> Friend Request pending... </button>
