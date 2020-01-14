@@ -1,15 +1,17 @@
 <h1> Timeline - My posts and my friends posts</h1>
-  
+
+<% @friends.each do |u|%>
+  <% u.posts.each do |p|%>
+    <%= p.user.fname %> <%= p.user.lname %>
+    <br>
+    <%= p.content %>
+    <br>
+    <%= render 'likes/like_posts', object: p%>
+    <%= render 'comments/form', object: p%>
+
+    <%= render 'comments/comment', object: p%>
+    <br><br>
+  <% end %>
+<% end %>
 
 
-# <% @posts.each do |p|%>
-#   <%= p.user.fname %> <%= p.user.lname %>
-#   <br>
-#   <%= p.content %>
-#   <br>
-#   <%= render 'likes/like_posts', object: p%>
-#   <%= render 'comments/form', object: p%>
-
-#   <%= render 'comments/comment', object: p%>
-#   <br><br>
-# <% end %>
