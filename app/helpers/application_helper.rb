@@ -43,7 +43,7 @@ module ApplicationHelper
   end
 
   # Returns either true or false depending on the current user's notice_seen column
-  def notification_seen()
+  def notification_seen
     current_user.notice_seen
   end
 
