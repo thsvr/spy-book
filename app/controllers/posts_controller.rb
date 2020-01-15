@@ -3,15 +3,7 @@
 class PostsController < ApplicationController
   def index
     @post = Post.all
-
-    my_friends = Friendship.friends.where('sent_by_id =?', current_user.id).or(
-      Friendship.friends.where('sent_to_id =?', current_user.id)
-    )
-    friends = []
-    my_friends.each do |f|
-      friends << f.sent_to_id if f.sent_to_id != current_user.id
-      friends << f.sent_by_id if f.sent_by_id != current_user.id
-    end
+    friends = my_friends
 
     @friends = []
     @friends << User.find(current_user.id)
@@ -43,5 +35,20 @@ class PostsController < ApplicationController
 
   def posts_params
     params.require(:post).permit(:content, :imageURL)
+  end
+
+  # Searches Friendship database and returns array, 'friends',
+  # which contains records of all mutual friendships for current_user
+  def my_friends
+    my_friends = Friendship.friends.where('sent_by_id =?', current_user.id).or(
+      Friendship.friends.where('sent_to_id =?', current_user.id)
+    )
+    friends = []
+    my_friends.each do |f|
+      friends << f.sent_to_id if f.sent_to_id != current_user.id
+      friends << f.sent_by_id if f.sent_by_id != current_user.id
+    end
+
+    friends
   end
 end

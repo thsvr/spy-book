@@ -33,4 +33,28 @@ module ApplicationHelper
     return true if request_sent == request_recieved && request_sent == true
     return false if request_sent == request_recieved && request_sent == false
   end
+
+  # Returns the new record created in notifications table
+  def new_notification(user, notice_id, notice_type)
+    notice = user.notifications.build(notice_id: notice_id, notice_type: notice_type)
+    user.notice_seen = false
+    user.save
+    notice
+  end
+
+  # Returns either true or false depending on the current user's notice_seen column
+  def notification_seen()
+    current_user.notice_seen
+  end
+
+  def notification_find(notice, type)
+    return User.find(notice.notice_id) if type == 'friendRequest'
+    return Post.find(notice.notice_id) if type == 'comment'
+    return Post.find(notice.notice_id) if type == 'like-post'
+
+    return unless type == 'like-comment'
+
+    comment = Comment.find(notice.notice_id)
+    Post.find(comment.post_id)
+  end
 end
