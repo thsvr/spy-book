@@ -4,10 +4,22 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_many :friend_sent, class_name: 'Friendship', foreign_key: 'sent_by_id', dependent: :destroy
+  has_many :friend_request, class_name: 'Friendship', foreign_key: 'sent_to_id', dependent: :destroy
+  has_many :notifications
+  mount_uploader :image, PictureUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :fname, length: { in: 3..15 }, presence: true
   validates :lname, length: { in: 3..15 }, presence: true
+  validate :picture_size
+
+  private
+
+  # Validates the size of an uploaded picture.
+  def picture_size
+    errors.add(:image, 'should be less than 1MB') if image.size > 1.megabytes
+  end
 end

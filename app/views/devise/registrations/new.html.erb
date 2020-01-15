@@ -30,6 +30,11 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+    
+  <div class="picture">
+    <%= f.label :upload_your_profile_picture %><br />
+    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png'  %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
@@ -38,4 +43,11 @@
 
 <%= render "devise/shared/links" %>
 
-
+<script type="text/javascript">
+  document.getElementById('user_image').addEventListener('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 1) {
+      alert('Maximum file size is 1 MB. Please choose a smaller file.');
+    }
+  });
+</script>

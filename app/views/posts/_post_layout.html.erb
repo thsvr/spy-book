@@ -1,0 +1,23 @@
+<%= object.user.fname %>
+<%= object.user.lname %>
+<br>
+<%= object.content %>
+<br>
+<% if object.imageURL%>
+  <%= image_tag(object.imageURL)%>
+<% end %> 
+<%= render 'likes/like_posts', object: object%>
+<%= render 'comments/form', object: object %>
+<%object.comments.each do |c|%>
+  <%= c.user.fname %>
+  <%= c.user.lname%> 
+  <br>
+  <%= c.content %> 
+  <% if current_user.id == c.user_id%>
+    <%= link_to  "Delete comment", comment_path(c), method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
+  <br>
+  <%= render 'likes/like_comments', object: c%>
+  <br><br>
+<%end%>
+<br><br>

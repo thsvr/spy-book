@@ -3,6 +3,8 @@
 class LikesController < ApplicationController
   def create
     type = type_subject?(params)
+    notice_type = 'like-post' if type == 'post'
+    notice_type = 'like-comment' if type == 'comment'
     @subject = Post.find(params[:post_id]) if type == 'post'
     @subject = Comment.find(params[:comment_id]) if type == 'comment'
     if already_liked?(type)
@@ -11,6 +13,8 @@ class LikesController < ApplicationController
       @like = @subject.likes.build(user_id: current_user.id)
       if @like.save
         flash[:success] = "#{type} liked!"
+        @notification = @subject.user.notifications.build(notice_id: @subject.id, notice_type: notice_type)
+        @notification.save
       else
         flash[:danger] = "#{type} like failed!"
       end
