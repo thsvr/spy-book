@@ -1,30 +1,9 @@
-<h1> This is the index page </h1>
 
-<h2>All Users</h2>
-<% @users.each do |user|%>
-  <%= link_to user_path(user) do %>
-    <%= user.fname %> <%= user.lname %>
+<h2 class="center"> Who Do You Want To Spy On? </h2>
+<h5 class="center mb-5">All Users</h5>
+
+<div class="container col-md-8">
+  <% @users.each do |user|%>
+    <%= render 'findFriends', object: user %>
   <% end %>
-   | 
-  <% if current_user.id != user.id%>
-    <% unless friend_request_sent?(user) %> <!-- If user is not a friend and no request has been sent -->
-      <% unless friend_request_recieved?(user) %> <!-- If user is not a friend and no request has been recieved -->
-        <% unless friend_request_status?(user) %> <!-- If user is not a friend and but request has been recieved or sent -->
-          <%= link_to user_friendships_path(user), method: :post do %>
-            <button class= "btn btn-warning"> Send Friend Request? </button>
-          <% end %>
-        <% else %> <!-- If user is a friend -->
-          <button class= "btn btn-success"> Friend </button>
-        <% end %>
-      <% else %> <!-- If user not a friend and a request has been sent -->
-        <button class= "btn btn-info" data-toggle="modal" data-target="#decisionModal">
-          Pending Friend Request... 
-        </button>
-        <%= render 'friendships/decisionModal', object: user%>
-      <% end %>
-    <% else %> <!-- If user not a friend and a request has been recieved -->
-      <button class= "btn btn-secondary" disabled> Friend Request pending... </button>
-    <% end %>
-  <% end %>
-  <br><br>
-<% end %>
+</div>
