@@ -23,8 +23,10 @@
             </div>
           </li>
           <li class="nav-item">
-            <%= tag("button", class: "btn notice-btn-#{notification_seen}", data: {toggle: 'modal', target: '#noticeModal'})%>
-              <%= link_to 'Notifications', button_path, :class => "btn", method: :get, remote: true %>
+            <%= button_to saw_notice_path, :class => "text-white btn notice-btn-#{notification_seen}",
+             data: {toggle: 'modal', target: '#noticeModal'}, method: :get, remote: true do %>
+                Notifications
+            <% end %>
           </li>
           <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, class: "nav-link", method: :delete %></li>
         <% else %>

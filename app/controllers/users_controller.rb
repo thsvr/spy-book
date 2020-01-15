@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   # Modifies current user's notice_seen column to true
-  def saw_notification()
+  def saw_notification
     current_user.notice_seen = true
     current_user.save
   end
