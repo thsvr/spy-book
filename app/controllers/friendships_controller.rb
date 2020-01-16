@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class FriendshipsController < ApplicationController
   include ApplicationHelper
 
@@ -29,6 +27,8 @@ class FriendshipsController < ApplicationController
     @friendship.status = true
     if @friendship.save
       flash[:success] = 'Friend Request Accepted!'
+      @friendship2 = current_user.friend_sent.build(sent_to_id: params[:user_id], status: true)
+      @friendship2.save
     else
       flash[:danger] = 'Friend Request could not be accepted!'
     end
