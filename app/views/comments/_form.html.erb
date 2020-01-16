@@ -1,6 +1,6 @@
 <%= form_for Comment.new do |f| %>
     <%= f.text_area :content, class: "form-control" %>
-    <%= f.submit "Comment", class: "btn btn-success" %>
+    <%= f.submit "Comment", class: "btn bg-light-purple" %>
     <%= f.hidden_field :post_id, :value => object.id %>
   <% end  %>
 
