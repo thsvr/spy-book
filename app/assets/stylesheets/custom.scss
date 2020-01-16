@@ -20,7 +20,8 @@ $gray-darker: #222;
 
 .bg-purple {
   // background-color: rgba(88, 56, 88, 0.377);
-  background-color:rgb(23, 161, 155);
+  //background-color:rgb(23, 161, 155);
+  background-color: #A1A9FE;
 }
 
 .bg-img1 {
@@ -82,7 +83,7 @@ p {
 /* header */
 
 #logo {
-  width: 60px;
+  width: 35px;
   color: white;
   letter-spacing: -1px;
   font-weight: bold;
@@ -99,11 +100,6 @@ p {
   padding: 0;
   margin: 0; 
 }
-i {
-  
-}
-
-
 
 /* forms */
 
@@ -163,11 +159,11 @@ input {
 /* Notifications Nav Button */
 
 .notice-btn-false{
-  background-color: red;
+  background-color:#4120A9;
 }
 
 .notice-btn-true{
-  background-color: green;
+  background-color:#7F8FA3;
 }
 
 /* logo */

@@ -24,7 +24,7 @@
           <li class="nav-item">
             <%= button_to saw_notice_path, :class => "text-white btn notice-btn-#{notification_seen}",
              data: {toggle: 'modal', target: '#noticeModal'}, method: :get, remote: true do %>
-                Notifications
+             <i class="fas fa-bell"></i> Notifications
             <% end %>
           </li>
           <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, class: "nav-link", method: :delete %></li>
