@@ -1,20 +1,23 @@
 <h2 class="center"> Who Do You Want To Spy On? </h2>
+<br><br>
 
 <div class="container col-md-8">
-  <% @users.each do |user|%>
-    <%= render 'findFriends', object: user %>
-  <% end %>
-</div>
-
 <% unless @friends.empty? %>
-  <h2>My Friends</h2>
-  <% @friends.each do |f|%> <!-- Shows all users that have accepted current user's friend request and have become friends  -->
-    <%= link_to user_path(f) do %>
-      <%= f.fname %> <%= f.lname %>
+  <div class="border">
+    <h2>My Friends</h2>
+    <% @friends.each do |f|%> <!-- Shows all users that have accepted current user's friend request and have become friends  -->
+      <div class="row mb-4">  
+        <div class="col-auto">
+          <%= link_to user_path(f) do %>
+            <%= f.fname %> <%= f.lname %>
+          <% end %>
+        </div>
+        <div class="col-auto">    
+        | <button class= "btn btn-success">  <i class="fas fa-user-friends"></i> Friend </button>
+        </div>
+      </div>
     <% end %>
-    | <button class= "btn btn-success"> Friend </button>
-    <br><br>
-  <% end %>
+  </div>
 <% end %>
 
 <% unless @pending_requests.empty? %>
@@ -23,7 +26,7 @@
     <%= link_to user_path(user) do %>
       <%= user.fname %> <%= user.lname %>
     <% end %>
-    | <button class= "btn btn-secondary" disabled> Friend Request pending... </button>
+    | <button class= "btn btn-secondary" disabled> <i class="fas fa-chalkboard-teacher"></i> Friend Request pending... </button>
     <br><br>
   <% end %>
 <% end %>
@@ -35,7 +38,7 @@
       <%= user.fname %> <%= user.lname %>
     <% end %>
     | <button class= "btn btn-info" data-toggle="modal" data-target="#decisionModal">
-        Pending Friend Request... 
+        <i class="fas fa-envelope"></i> Pending Friend Request... 
       </button>
       <%= render 'friendships/decisionModal', object: user %>
     <br><br>
@@ -51,8 +54,9 @@
       <% end %>
       | 
       <%= link_to user_friendships_path(user), method: :post do %>
-        <button class= "btn btn-warning"> Send Friend Request? </button>
+        <button class= "btn btn-warning"> <i class="fas fa-share-square"></i> Send Friend Request? </button>
       <% end %>
     <% end %>
   <% end %>
 <% end %>
+</div>
