@@ -11,7 +11,9 @@
     </div>
     
     <% if object.imageURL%>
-      <%= image_tag(object.imageURL)%>
+      <div class="center py-4">
+        <%= image_tag(object.imageURL)%>
+      </div>
     <% end %>
   </div> 
 
@@ -19,21 +21,8 @@
 
   <div class="mx-5">
 
-    <%object.comments.each do |c|%>
-      <div class="border-bottom">
-        <span class= "font-weight-bold">
-          <%= c.user.fname %>
-          <%= c.user.lname%> 
-        </span>
-        <br>
-        <%= c.content %> 
-        <% if current_user.id == c.user_id%>
-          <%= link_to  "Delete comment", comment_path(c), method: :delete, data: { confirm: "You sure?" } %>
-        <% end %>
-        
-        <div><%= render 'likes/like_comments', object: c%></div> 
-      </div>
-    <%end%> 
+    <%= render 'comments/comment', object: object %>
+
     
     <div class="  ">
       <%= render 'comments/form', object: object %>

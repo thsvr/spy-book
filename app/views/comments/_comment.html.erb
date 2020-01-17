@@ -1,11 +1,19 @@
-<%object.comments.each do |c|%>
-    <h5> <%= c.user.fname %> <%= c.user.lname%> </h5> Posted <%= distance_of_time_in_words(object.created_at, c.created_at) %> ago
-    <br>
-    <%= c.content %> 
-    <%= render 'likes/like_comments', object: c%>
-
-    <% if current_user.id == c.user_id%>
-      <%= link_to  "Delete comment", comment_path(c), method: :delete, data: { confirm: "You sure?" } %>
-    <% end %>
-    <br><br>
-<%end%>
+    <%object.comments.each do |c|%>
+      <div class="border-bottom">
+        <div class= "font-weight-bold pt-2">
+          <%= c.user.fname %>
+          <%= c.user.lname%> 
+        </div>
+        <div class="size-12">Posted <%= distance_of_time_in_words(object.created_at, c.created_at) %> ago</div>
+        <br>
+        <div class="font-rale pl-2"><%= c.content %>
+        <% if current_user.id == c.user_id%>
+          <%= link_to comment_path(c), method: :delete, data: { confirm: "You sure?" } do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        <% end %>
+        </div>
+        
+        <div><%= render 'likes/like_comments', object: c%></div> 
+      </div>
+    <%end%> 

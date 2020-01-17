@@ -1,7 +1,13 @@
-<%= form_for Comment.new do |f| %>
-    <%= f.text_area :content, class: "form-control" %>
-    <%= f.submit "Comment", class: "btn bg-light-purple" %>
-    <%= f.hidden_field :post_id, :value => object.id %>
-  <% end  %>
-
+<div class="col mx-auto">
+  <%= form_for @comment = Comment.new do |f| %>
+      <%= render "devise/shared/error_messages", resource: @comment %>
+      <%= f.hidden_field :post_id, :value => object.id %>
+      <div class="form-group">
+        <%= f.text_area :content, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.submit 'Comment', class:"btn bg-light-purple"%>
+      </div>
+  <% end %>
+</div>
   
