@@ -24,10 +24,6 @@ $gray-darker: #222;
   background-color: #A1A9FE;
 }
 
-.bg-img1 {
-  // background-image: url(https://cdn.evbstatic.com/s3-build/perm_001/068221/django/images/homefeed/music-campaing-2-2600-large.jpg);
-}
-
 .bg-blur {
   z-index: -1;
   width: 110%;
@@ -45,6 +41,7 @@ html, body{ overflow-x: hidden;}
 body {
   padding-top: 100px;
   color: grey;
+  font-family: 'Arima Madurai', cursive;
 }
 
 section {
@@ -166,4 +163,85 @@ input {
   background-color:#7F8FA3;
 }
 
-/* logo */
+/* icon */
+
+.btn-neutral {
+  color: grey;
+  font-size: 20px;
+}
+
+.btn-liked {
+  color: purple;
+  font-size: 20px;
+}
+
+.bg-rose {
+  background-color: #F6D4D2;
+}
+
+.bg-light-purple {
+  background-color: #B5B3CA;
+}
+
+.btn-violete {
+  background-color: #A16AE8;
+}
+
+.btn-decline {
+  background-color: #DC143C;
+}
+
+.btn-accept {
+  background-color: #4B0082;
+}
+.btn-friend {
+  color: white;
+  background-color: rgb(167, 65, 207);
+}
+
+.btn-pending {
+  color: white;
+  background-color: #00C6B7;
+}
+
+.btn-user {
+  color: white;
+  background-color: #0061CE;
+}
+
+// 0061CE
+// 009ccA
+// 00C6B7
+// 00C279
+
+.size-12{
+  font-size: 13px;
+  color: rgb(170, 170, 170);
+}
+.size-24{
+  font-size: 24px;
+}
+.size-80{
+  font-size: 80px;
+}
+
+.font-courgette{
+  font-family: 'Courgette', cursive;
+}
+
+.font-Arima-Madurai{
+  font-family: 'Arima Madurai', cursive;
+  font-size: 24px;
+}
+
+.font-raleway{
+  font-family: 'Raleway', sans-serif;
+  color: rgb(255, 255, 255) !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.font-rale{
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}

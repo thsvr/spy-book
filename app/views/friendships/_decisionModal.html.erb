@@ -13,10 +13,10 @@
       </div>
       <div class="modal-footer">
         <%= link_to accept_friend_user_friendships_path(object) do %>
-          <button type="button" class="btn btn-primary">Accept</button>
+          <button type="button" class="btn btn-accept text-white font-weight-bold"> <i class="fas fa-user-check"></i> Accept</button>
         <% end %>
         <%= link_to decline_friend_user_friendships_path(object) do %>
-          <button type="button" class="btn btn-warning">Decline</button>
+          <button type="button" class="btn btn-decline text-white font-weight-bold"><i class="fas fa-user-times"></i> Decline</button>
         <% end %>
       </div>
     </div>
