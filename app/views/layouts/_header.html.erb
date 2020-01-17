@@ -25,9 +25,9 @@
             <%= button_to saw_notice_path, :class => "text-white btn notice-btn-#{notification_seen}",
              data: {toggle: 'modal', target: '#noticeModal'}, method: :get, remote: true do %>
              <% if notification_seen %>
-             <i class="fas fa-bell-slash"></i>  No Notifications
+              <i class="fas fa-bell-slash"></i>  No Notifications
              <% else %>
-             <i class="fas fa-bell"></i> Notifications
+              <i class="fas fa-bell"></i> Notifications
              <% end %>
             <% end %>
           </li>

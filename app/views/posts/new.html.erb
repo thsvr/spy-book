@@ -2,6 +2,8 @@
 <p>Find me in app/views/posts/new.html.erb</p>
 
 <%= form_for(@post) do |f| %>
+    <%= render "devise/shared/error_messages", resource: @post %>
+    
     Content: <%= f.text_area :content %><br />
     Image_by_URL: <%= f.text_field :imageURL %><br />
     <%= f.submit 'New Post'%>
