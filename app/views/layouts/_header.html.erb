@@ -1,12 +1,11 @@
 <div class="bg-img1 bg-blur"></div>
 <header class="fixed-top navbar-dark bg-purple">
-<%= favicon_link_tag asset_path('logo1.png') %>
 
   <div class="">
     <nav class="navbar navbar-expand-sm">
       <div class ="navbar-header"> 
       <%= link_to posts_path, class: "text-light" do %>
-        <%=image_tag("logo1.png", class: "navbar-brand", id: "logo")%>
+        <%=image_tag("user-secret-solid.svg", id: "logo", class: "navbar-branch")%>
       <% end %>
       </div>
       <ul class="navbar-nav ml-auto">
@@ -23,13 +22,12 @@
             </div>
           </li>
           <li class="nav-item">
-            <button class= "btn btn-info nav-link" data-toggle="modal" data-target="#noticeModal">
-              Notifications
-            </button>
+            <%= button_to saw_notice_path, :class => "text-white btn notice-btn-#{notification_seen}",
+             data: {toggle: 'modal', target: '#noticeModal'}, method: :get, remote: true do %>
+             <i class="fas fa-bell"></i> Notifications
+            <% end %>
           </li>
           <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, class: "nav-link", method: :delete %></li>
-        <% else %>
-          <li class="nav-item"><%= link_to "Sign in", new_user_session_path, class: "nav-link" %></li>
         <% end %>
       </ul>
     </nav>

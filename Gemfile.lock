@@ -323,7 +323,7 @@ DEPENDENCIES
   bootstrap (~> 4.4.1)
   byebug
   capybara
-  carrierwave (= 1.2.2)
+  carrierwave
   database_cleaner
   devise
   dotenv-rails
@@ -333,7 +333,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
-  mini_magick (= 4.7.0)
+  mini_magick
   omniauth-facebook
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)

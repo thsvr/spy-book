@@ -20,7 +20,8 @@ $gray-darker: #222;
 
 .bg-purple {
   // background-color: rgba(88, 56, 88, 0.377);
-  background-color:rgb(23, 161, 155);
+  //background-color:rgb(23, 161, 155);
+  background-color: #A1A9FE;
 }
 
 .bg-img1 {
@@ -74,15 +75,6 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
-}
-
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -91,18 +83,22 @@ p {
 /* header */
 
 #logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
+  width: 35px;
+  color: white;
   letter-spacing: -1px;
   font-weight: bold;
-  width: 60px;
-  height: auto;
+  padding: 0;
+  margin: 0;  
   &:hover {
-    color: #fff;
+    color:grey;
     text-decoration: none;
   }
+}
+.fa-user-secret {
+  font-size: 60px;
+  border: 1px solid red; 
+  padding: 0;
+  margin: 0; 
 }
 
 /* forms */
@@ -160,26 +156,14 @@ input {
   }
 }
 
-/* Events index */
+/* Notifications Nav Button */
 
-.box {
-  height: 172px;
+.notice-btn-false{
+  background-color:#4120A9;
 }
 
-.card {
-  overflow-x: hidden;
-  a {
-    text-decoration: none;
-    color: black;
-  }
+.notice-btn-true{
+  background-color:#7F8FA3;
 }
 
-.old-overlay {
-  pointer-events: none;
-  background-color: rgba(128, 128, 128, 0.747);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 98;
-}
+/* logo */

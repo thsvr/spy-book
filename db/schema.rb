@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_14_223333) do
+ActiveRecord::Schema.define(version: 2020_01_16_175023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_223333) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["sent_by_id"], name: "index_friendships_on_sent_by_id"
+    t.index ["sent_to_id", "sent_by_id"], name: "index_friendships_on_sent_to_id_and_sent_by_id", unique: true
     t.index ["sent_to_id"], name: "index_friendships_on_sent_to_id"
   end
 
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_223333) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "notice_seen", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
