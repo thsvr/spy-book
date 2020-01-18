@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div class="modal fade" id="imageUploadModal" tabindex="-1" role="dialog" aria-labelledby="imageUploadModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--  <div class="modal-header">
+        <h5 class="modal-title" id="decisionModalLabel">Friend Request</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> -->
+      <div class="modal-body">
+        <h5 class="modal-title" id="imageUploadModalLabel"> Change Profile Picture </h5>
+        <%= form_for(object, html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: object %>
+
+          <div class="field">
+            <%= f.label :Profile_image %><br />
+            <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png'  %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Update" %>
+          </div>
+        <% end %>
+      </div>
+      <!-- <div class="modal-footer">
+      </div> -->
+    </div>
+  </div>
+</div>

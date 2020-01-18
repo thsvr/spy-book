@@ -1,0 +1,43 @@
+<header class="fixed-top navbar-dark bg-purple shadow">
+
+  <div class="">
+    <nav class="navbar navbar-expand-sm">
+      <div class ="navbar-header"> 
+        <%= link_to posts_path, class: "text-light" do %>
+          <%=image_tag("user-secret-solid.svg", id: "logo", class: "navbar-branch")%>
+          <span class="text-white font-weight-bold font-courgette size-24">SpyBook</span>
+        <% end %>
+      </div>
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to "Find Friends", users_path, class: "nav-link font-raleway" %></li>
+          <li class="nav-item"><%= link_to "My Profile", user_path(current_user), class: "nav-link font-raleway" %></li>
+          <li class="nav-item dropdown">
+            <a id= "navbarDropdown" class="nav-link dropdown-toggle font-raleway" 
+                href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Create Post <b class="caret"></b>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "New", new_post_path, class: "dropdown-item" %>
+            </div>
+          </li>
+          <li class="nav-item">
+            <%= button_to saw_notice_path, :class => "text-white btn notice-btn-#{notification_seen}",
+             data: {toggle: 'modal', target: '#noticeModal'}, method: :get, remote: true do %>
+             <% if notification_seen %>
+              <i class="fas fa-bell-slash"></i>  No Notifications
+             <% else %>
+              <i class="fas fa-bell"></i> Notifications
+             <% end %>
+            <% end %>
+          </li>
+          <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, class: "nav-link font-raleway", method: :delete %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<% if user_signed_in? %>
+  <%= render 'shared/notifications', object: current_user.notifications%>
+<%end%>

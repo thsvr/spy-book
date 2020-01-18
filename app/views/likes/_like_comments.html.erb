@@ -1,0 +1,8 @@
+<%= object.likes.count %>
+<%= link_to comment_likes_path(object), class: "text-light", method: :post do %>
+  <% if liked?(subject = object, type = 'comment') %>
+      <button class="btn btn-liked"><i class="fas fa-thumbs-up"></i></button>
+    <% else %>
+      <button class="btn btn-neutral"><i class="fas fa-thumbs-up"></i></button>
+  <% end %>
+<% end %>

@@ -1,0 +1,247 @@
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+$state-danger-text: #f0140c;
+$gray: #555;
+$gray-light: #777;
+$gray-lighter: #999;
+$gray-darker: #222;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* navbar */
+
+.bg-purple {
+  // background-color: rgba(88, 56, 88, 0.377);
+  //background-color:rgb(23, 161, 155);
+  background-color: #A1A9FE;
+}
+
+.bg-blur {
+  z-index: -1;
+  width: 110%;
+  height: 600px;
+  position: absolute;
+  top:0;
+  left: -20px;
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+}
+
+/* universal */
+html, body{ overflow-x: hidden;}
+
+body {
+  padding-top: 100px;
+  color: grey;
+  font-family: 'Arima Madurai', cursive;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  width: 35px;
+  color: white;
+  letter-spacing: -1px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;  
+  &:hover {
+    color:grey;
+    text-decoration: none;
+  }
+}
+.fa-user-secret {
+  font-size: 60px;
+  border: 1px solid red; 
+  padding: 0;
+  margin: 0; 
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error !optional;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+/* flash */
+.flash {
+  z-index: 99;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+/* Notifications Nav Button */
+
+.notice-btn-false{
+  background-color:#4120A9;
+}
+
+.notice-btn-true{
+  background-color:#7F8FA3;
+}
+
+/* icon */
+
+.btn-neutral {
+  color: grey;
+  font-size: 20px;
+}
+
+.btn-liked {
+  color: purple;
+  font-size: 20px;
+}
+
+.bg-rose {
+  background-color: #F6D4D2;
+}
+
+.bg-light-purple {
+  background-color: #B5B3CA;
+}
+
+.btn-violete {
+  background-color: #A16AE8;
+}
+
+.btn-decline {
+  background-color: #DC143C;
+}
+
+.btn-accept {
+  background-color: #4B0082;
+}
+.btn-friend {
+  color: white;
+  background-color: rgb(167, 65, 207);
+}
+
+.btn-pending {
+  color: white;
+  background-color: #00C6B7;
+}
+
+.btn-user {
+  color: white;
+  background-color: #0061CE;
+}
+
+// 0061CE
+// 009ccA
+// 00C6B7
+// 00C279
+
+.size-12{
+  font-size: 13px;
+  color: rgb(170, 170, 170);
+}
+.size-24{
+  font-size: 24px;
+}
+.size-80{
+  font-size: 80px;
+}
+
+.font-courgette{
+  font-family: 'Courgette', cursive;
+}
+
+.font-Arima-Madurai{
+  font-family: 'Arima Madurai', cursive;
+  font-size: 24px;
+}
+
+.font-raleway{
+  font-family: 'Raleway', sans-serif;
+  color: rgb(255, 255, 255) !important;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.font-rale{
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}

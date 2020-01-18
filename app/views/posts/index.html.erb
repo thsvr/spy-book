@@ -1,0 +1,7 @@
+<h1> Timeline - My posts and my friends posts</h1>
+
+<% @our_posts.each do |p|%>
+  <%= render 'posts/post_layout', object: p %>
+<% end %>
+
+
