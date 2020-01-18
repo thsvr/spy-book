@@ -5,8 +5,8 @@
       <div class ="navbar-header"> 
         <%= link_to posts_path, class: "text-light" do %>
           <%=image_tag("user-secret-solid.svg", id: "logo", class: "navbar-branch")%>
+          <span class="text-white font-weight-bold font-courgette size-24">SpyBook</span>
         <% end %>
-        <span class="text-white font-weight-bold font-courgette size-24">SpyBook</span>
       </div>
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
