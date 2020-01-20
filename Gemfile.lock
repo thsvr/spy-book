@@ -110,27 +110,10 @@ GEM
       dotenv (= 2.7.5)
       railties (>= 3.2, < 6.1)
     erubi (1.9.0)
-    excon (0.71.1)
     execjs (2.7.0)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.3)
-    fog-aws (2.0.1)
-      fog-core (~> 1.38)
-      fog-json (~> 1.0)
-      fog-xml (~> 0.1)
-      ipaddress (~> 0.8)
-    fog-core (1.45.0)
-      builder
-      excon (~> 0.58)
-      formatador (~> 0.2)
-    fog-json (1.2.0)
-      fog-core
-      multi_json (~> 1.10)
-    fog-xml (0.1.3)
-      fog-core
-      nokogiri (>= 1.5.11, < 2.0.0)
-    formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashie (3.6.0)
@@ -140,7 +123,6 @@ GEM
     image_processing (1.7.1)
       mini_magick (~> 4.0)
       ruby-vips (>= 2.0.13, < 3)
-    ipaddress (0.8.3)
     jaro_winkler (1.5.4)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
@@ -161,9 +143,6 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.2)
-    mime-types (3.3)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2019.1009)
     mimemagic (0.3.3)
     mini_magick (4.7.0)
     mini_mime (1.0.2)
@@ -336,12 +315,10 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker!
-  fog-aws
   hirb
   jbuilder (~> 2.7)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
-  mime-types
   mini_magick
   omniauth-facebook
   pg (>= 0.18, < 2.0)
