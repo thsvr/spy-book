@@ -2,11 +2,12 @@
 
   <div class=" ">
     <div class="font-weight-bold mt-2">
-      <%= object.user.fname %>
-      <%= object.user.lname %>
-    </div> <br>
-        
-    <div class="font-italic">
+      <%= object.user.full_name %>
+    </div>
+
+    <div class="size-12">Posted <%= distance_of_time_in_words(object.created_at, Time.now) %> ago</div>
+    
+    <div class="font-italic mt-3">
       <%= object.content %>
     </div>
     
