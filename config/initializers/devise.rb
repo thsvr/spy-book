@@ -300,9 +300,6 @@ Devise.setup do |config|
   config.omniauth :facebook,  ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], 
                     token_params: { parse: :json }, scope: 'public_profile,email',
                     info_fields: 'email,first_name,last_name,gender,birthday,location,picture',
-                    client_options: {
-                        site: 'https://graph.facebook.com/v2.11',
-                        authorize_url: "https://www.facebook.com/v2.11/dialog/oauth"
-                    } 
+                    token_params: { parse: :json }
 
 end
