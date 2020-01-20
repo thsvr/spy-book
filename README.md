@@ -4,7 +4,7 @@
 
 ![screenshot](docs/erd.jpeg)
 
-## Heroku Link: [Spy-Book.com](https://whispering-depths-15374.herokuapp.com/users)
+## Heroku Link: [Spy-Book.com](https://whispering-depths-15374.herokuapp.com/)
 
 ## Built With
 
