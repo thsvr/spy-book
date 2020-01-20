@@ -10,7 +10,7 @@
         <div class="d-flex align-items-center mb-2 border-bottom py-2">
           <div class="col-auto p-0 pl-5 text-capitalize">
             <%= link_to user_path(f) do %>
-              <%= f.fname %> <%= f.lname %>
+              <%= f.full_name %>
             <% end %>
           </div>
           <div class="col-auto p-0 px-1">|</div>
@@ -29,7 +29,7 @@
         <div class="d-flex align-items-center mb-2 border-bottom py-2">
           <div class="col-auto p-0 pl-5 text-capitalize"> 
             <%= link_to user_path(user) do %>
-              <%= user.fname %> <%= user.lname %>
+              <%= user.full_name %>
             <% end %>
           </div>
           <div class="col-auto p-0 px-1">|</div>
@@ -51,7 +51,7 @@
         <div class="d-flex align-items-center mb-2 border-bottom py-2">
           <div class="col-auto p-0 pl-5 text-capitalize"> 
             <%= link_to user_path(user) do %>
-            <%= user.fname %> <%= user.lname %>
+            <%= user.full_name %>
             <% end %>
           </div>
           <div class="col-auto p-0 px-1">|</div>
@@ -76,7 +76,7 @@
           <div class="d-flex align-items-center mb-2 border-bottom pb-2">
             <div class="col-auto p-0 pl-5 text-capitalize"> 
               <%= link_to user_path(user) do %>
-                <%= user.fname %> <%= user.lname %>
+                <%= user.full_name %>
               <% end %>
             </div>
             <div class="col-auto p-0 px-1">|</div>
