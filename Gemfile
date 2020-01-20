@@ -74,6 +74,7 @@ end
 
 group :production do
   gem 'fog-aws'
+  gem 'mime-types'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

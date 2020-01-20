@@ -161,6 +161,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.2)
+    mime-types (3.3)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2019.1009)
     mimemagic (0.3.3)
     mini_magick (4.7.0)
     mini_mime (1.0.2)
@@ -338,6 +341,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  mime-types
   mini_magick
   omniauth-facebook
   pg (>= 0.18, < 2.0)
