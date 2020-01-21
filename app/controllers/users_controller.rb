@@ -12,6 +12,11 @@ class UsersController < ApplicationController
 
   def update_img
     @user = User.find(params[:id])
+    unless current_user.id == @user.id
+      redirect_back(fallback_location: users_path(current_user))
+      return
+    end
+
     image = params[:user][:image] unless params[:user].nil?
     if image
       @user.image = image

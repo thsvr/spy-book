@@ -20,7 +20,7 @@ gem 'dotenv-rails'
 # Faker for database population
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 # To add images
-gem 'carrierwave'
+gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -72,9 +72,10 @@ group :test do
   gem 'webdrivers'
 end
 
-group :production do
-  gem 'fog-aws'
-end
+# group :production do
+#   gem 'fog-aws'
+#   gem 'mime-types'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

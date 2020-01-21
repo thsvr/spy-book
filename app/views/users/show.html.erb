@@ -1,5 +1,5 @@
 <h1>
-  <%= @user.fname%> <%= @user.lname%>
+  <%= @user.full_name%>
   <br>
 </h1>
 
@@ -7,12 +7,14 @@
   <div class=" mx-auto">
 
     <div class="col-m6 mb-2"> <%= image_tag @user.image.url if @user.image? %> </div>
-    <div class="col-m6">
-      <button class= "btn btn-violete text-white font-weight-bold" data-toggle="modal" data-target="#imageUploadModal">
-        Upload Profile Picture
-      </button>
-      <%= render 'shared/imageUploadModal', object: @user%>
-    </div>
+    <% if current_user.id == @user.id %>
+      <div class="col-m6">
+        <button class= "btn btn-violete text-white font-weight-bold" data-toggle="modal" data-target="#imageUploadModal">
+          Upload Profile Picture
+        </button>
+        <%= render 'shared/imageUploadModal', object: @user%>
+      </div>
+    <%end%>
 
   </div>
 </div>
@@ -23,12 +25,3 @@
   <%= render 'posts/post_layout', object: p %>
 <% end %>
 
-
-<script type="text/javascript">
-  document.getElementById('user_image').addEventListener('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 1) {
-      alert('Maximum file size is 1 MB. Please choose a smaller file.');
-    }
-  });
-</script>
