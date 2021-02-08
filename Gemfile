@@ -20,7 +20,7 @@ gem 'dotenv-rails'
 # Faker for database population
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 # To add images
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'mini_magick'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
